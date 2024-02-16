@@ -1,0 +1,94 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: "Sora", sans-serif;
+  background: #fafaf9;
+  margin-inline: 1.2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  min-width: 180px;
+  padding: 1.2rem;
+  padding-bottom: 1.5rem;
+  border-radius: 1.1rem;
+  box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+  background: #ffffff;
+}
+.card__img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  height: 160px;
+}
+.card__tag {
+  background: #e6d6fc;
+  width: min-content;
+  padding: 6px 16px;
+  border-radius: 1rem;
+  color: #883ae1;
+  font-size: 0.75rem;
+  margin-block: 1rem;
+}
+.card__title {
+  color: #20293a;
+  margin: 0;
+  font-size: 1.5rem;
+}
+.card__text {
+  color: #6c727f;
+  margin-block: 0.5rem 1rem;
+  font-size: 1.175rem;
+}
+.card__author {
+  position: relative;
+  color: #6c727f;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
+.card__author::before {
+  /* Para crear la linea de separacion entre el texto y el autor */
+  position: absolute;
+  top: 0;
+  left: calc(-1.2rem); /* se resta el valor de padding por lado de la card*/
+  background-color: #e5eaf0;
+  content: "";
+  height: 1px;
+
+  /* se suman los valores de los padding izq y der 
+  de la card con el 100% del width del card__author */
+  width: calc(100% + 2.4rem);
+}
+
+@media (width < 360px) {
+  .card {
+    padding: 1rem;
+    padding-bottom: 1.2rem;
+    border-radius: 1rem;
+  }
+  .card__img {
+    border-radius: 0.8rem;
+  }
+  .card__tag {
+    font-size: 0.65rem;
+    margin-block: 0.8rem;
+  }
+  .card__title {
+    font-size: 1.25rem;
+  }
+  .card__text {
+    margin-block: 0.3rem 0.8rem;
+    font-size: 1.0175rem;
+  }
+  .card__author {
+    font-size: 0.8rem;
+  }
+  .card__author::before {
+    left: calc(-1rem);
+    width: calc(100% + 2rem);
+  }
+}
